@@ -16,4 +16,7 @@ if __name__ == '__main__':
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
 
 
-#hello world 222 ssss
+# Every time you wanna download the newest project file do this:
+
+# git fetch origin
+# git merge origin/master

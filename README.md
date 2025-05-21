@@ -1,2 +1,2 @@
 # ClickerGame
-a clicker game
+A clicker game that helps break down the consequences of climate change.

@@ -15,6 +15,10 @@ if __name__ == '__main__':
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
 
+# Do this in you git bash before you do the commits:
+
+# git config --global user.name "name"
+# git config --global user.email your@email.mail
 
 # Every time you wanna download the newest project file do this:
 

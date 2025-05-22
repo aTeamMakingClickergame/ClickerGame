@@ -5,7 +5,7 @@ import shop
 pygame.init() #init pygame
 pygame.display.set_caption("A Click Game")
 fps=60 #fps
-fpsClock=pygame.time.Clock() #init fps clock
+fpsClock=pygame.time.Clock() #init fppis clock
 size=(900,700) #windows size
 font_counter=pygame.font.SysFont('Arial Black',32)
 screen=pygame.display.set_mode(size)

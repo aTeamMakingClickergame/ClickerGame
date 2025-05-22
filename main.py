@@ -1,6 +1,7 @@
 import pygame #pygame for game development
 from pygame.locals import *
 import sys
+import shop
 
 pygame.init() #init pygame
 fps=60 #fps
@@ -8,7 +9,7 @@ fpsClock=pygame.time.Clock() #init fps clock
 size=(700,500) #windows size
 font_counter=pygame.font.SysFont('Arial Black',32)
 
-screen = pygame.display.set_mode(size)
+screen=pygame.display.set_mode(size)
 pygame.display.set_caption("My Game")
 
 button_rect=pygame.Rect(300,150,100,100)
@@ -25,7 +26,8 @@ counter_text=font_counter.render(str(counter),True,(255,255,255))
 earth=pygame.image.load("resources/earth.png").convert_alpha()
 quit=pygame.image.load("resources/quit.png").convert_alpha()
 
-done = False;
+done=False;
+
 
 while not done:
     for event in pygame.event.get():

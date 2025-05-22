@@ -199,6 +199,7 @@ while not done:
         if event.type==USEREVENT:
             counter+=(1*Volunteer+6*Gardener+50*Forester+1000*Dryad+100000*Specialist+1000000*God)
             pygame.display.update()
+    
             
     counter_text=font_counter.render(reform(counter),True,(0,127,0))
     #screen
@@ -304,7 +305,8 @@ while not done:
     screen.blit(trees_price_tag[4],(830-trees_price_tag[4].get_width(),475))
     screen.blit(trees_price_tag[5],(830-trees_price_tag[5].get_width(),580))
     pygame.display.update()
-
+    if(counter>=1200000000000):
+        done=True
 
 # git config --global user.name "name"
 # git config --global user.email your@email.mail
@@ -315,6 +317,20 @@ while not done:
 # git merge origin/master
 
 # update
+
+if(counter>=1200000000000):
+    size=(394,514)
+    screen=pygame.display.set_mode(size)
+    finish=pygame.image.load("finish.jpg").convert_alpha()
+    screen.blit(finish,(0,0))
+    
+    done=False
+    while not done:
+        for event in pygame.event.get():
+            if event.type==pygame.QUIT:
+                done=True
+        screen.blit(finish,(0,0))
+        pygame.display.update()
 
 with open("data/dat","w",encoding="utf-8") as file:
     file.write(str(counter))

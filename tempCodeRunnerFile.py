@@ -1,2 +1,2 @@
 
-    for event in pygame.event.get():
+            done=True

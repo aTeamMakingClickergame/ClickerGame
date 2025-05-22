@@ -6,7 +6,7 @@ pygame.init() #init pygame
 fps=60 #fps
 fpsClock=pygame.time.Clock() #init fps clock
 size=(700,500) #windows size
-font_counter=pygame.font.SysFont('Arial',32)
+font_counter=pygame.font.SysFont('Arial Black',32)
 
 screen = pygame.display.set_mode(size)
 pygame.display.set_caption("My Game")
@@ -17,7 +17,12 @@ text_color=(0,0,0)
 counter=0 #The Global Counter
 counter_text=font_counter.render(str(counter),True,(255,255,255))
 
+#images
+earth=pygame.image.load("resources/earth.png").convert_alpha()
+
 done = False;
+
+
 while not done:
     for event in pygame.event.get():
         if event.type==pygame.QUIT:
@@ -27,8 +32,9 @@ while not done:
                 counter+=1
                 counter_text=font_counter.render(str(counter),True,(255,255,255))
                 print(counter)
-    screen.fill((0,139,139))
-    pygame.draw.rect(screen,button_color,button_rect)
+    #screen
+    screen.fill((0,0,0))
+    screen.blit(earth,(300,150))
     screen.blit(counter_text,(300,300))
     pygame.display.update()
 

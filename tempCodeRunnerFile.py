@@ -1,2 +1,2 @@
 
-            done=True
+    UpdCharacters()

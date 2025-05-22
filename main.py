@@ -40,6 +40,7 @@ while not done:
     screen.blit(earth,(400,200))
     screen.blit(counter_text,(300,300))
     pygame.display.update()
+    #
 
 
 # git config --global user.name "name"

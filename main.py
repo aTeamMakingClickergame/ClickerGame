@@ -1,21 +1,24 @@
-# This is a sample Python script.
+import pygame #pygame for game development
+import sys
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+pygame.init() #init pygame
+fps=60
+fpsClock=pygame.time.Clock()
 
+size=(700,500) #windows size
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+screen = pygame.display.set_mode(size)
+pygame.display.set_caption("My Game")
 
+done = False;
+while not done:
+    for event in pygame.event.get():
+        if(event.type==pygame.QUIT):
+            done=True
+    screen.fill((255,255,255))
+    pygame.draw.rect(screen,(255,0,0),[50,50,50,50])
+    pygame.display.update()
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
-
-# Do this in you git bash before you do the commits:
 
 # git config --global user.name "name"
 # git config --global user.email your@email.mail

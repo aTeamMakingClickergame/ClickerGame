@@ -8,6 +8,8 @@ fps=60 #fps
 fpsClock=pygame.time.Clock() #init fppis clock
 size=(900,700) #windows size
 font_counter=pygame.font.SysFont('Arial Black',32)
+statsfont=pygame.font.SysFont('Arial Black',20)
+
 screen=pygame.display.set_mode(size)
 pygame.display.set_caption("My Game")
 
@@ -20,6 +22,8 @@ with open("data/dat","r",encoding="utf-8") as file:
 counter_text=font_counter.render(str(counter),True,(255,255,255))
 
 def reform(num):
+    if(num>=1000000000000):
+        return str(round(float(num)/1000000000000,2))+"T"
     if(num>=1000000000):
         return str(round(float(num)/1000000000,2))+"B"
     if(num>=1000000):
@@ -117,6 +121,9 @@ done=False
 pygame.time.set_timer(USEREVENT,1000)
 
 while not done:
+    TreePerSecond=statsfont.render(reform(1*Volunteer+6*Gardener+50*Forester+1000*Dryad+100000*Specialist+1000000*God)+" Trees Per Second",True,(0,0,255))
+    TreePerClick=statsfont.render(reform(1*(1+Oak)*(1+Birch*2)*(1+Cherry*3)*(1+Maple*4)*(1+Golden*5)*(1+Binary*6))+" Trees Per Click",True,(0,0,255))
+    
     Pos=pygame.mouse.get_pos()
     for event in pygame.event.get():
         if event.type==pygame.QUIT:
@@ -198,6 +205,8 @@ while not done:
     screen.fill((0,0,0))
     screen.blit(earth,(400,200))
     screen.blit(counter_text,(450-counter_text.get_width()/2,350))
+    screen.blit(TreePerSecond,(450-TreePerSecond.get_width()/2,400))
+    screen.blit(TreePerClick,(450-TreePerClick.get_width()/2,450))
     #
     #rects
     characters_rect=[

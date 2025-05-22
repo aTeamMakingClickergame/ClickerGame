@@ -1,22 +1,33 @@
 import pygame #pygame for game development
+from pygame.locals import *
 import sys
 
 pygame.init() #init pygame
-fps=60
-fpsClock=pygame.time.Clock()
+fps=60 #fps
+fpsClock=pygame.time.Clock() #init fps clock
 
 size=(700,500) #windows size
 
 screen = pygame.display.set_mode(size)
 pygame.display.set_caption("My Game")
 
+button_rect=pygame.Rect(300,150,100,100)
+button_color=(0,128,0)
+text_color=(0,0,0)
+
+counter=0 #The Global Counter
+
 done = False;
 while not done:
     for event in pygame.event.get():
-        if(event.type==pygame.QUIT):
+        if event.type==pygame.QUIT:
             done=True
-    screen.fill((255,255,255))
-    pygame.draw.rect(screen,(255,0,0),[50,50,50,50])
+        if event.type==MOUSEBUTTONDOWN:
+            if button_rect.collidepoint(event.pos):
+                counter+=1
+                print(counter)
+    screen.fill((0,139,139))
+    pygame.draw.rect(screen,button_color,button_rect)
     pygame.display.update()
 
 

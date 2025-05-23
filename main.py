@@ -305,7 +305,7 @@ while not done:
     screen.blit(trees_price_tag[4],(830-trees_price_tag[4].get_width(),475))
     screen.blit(trees_price_tag[5],(830-trees_price_tag[5].get_width(),580))
     pygame.display.update()
-    if(counter>=1200000000000):
+    if(counter>=2100000000000):
         done=True
 
 # git config --global user.name "name"
@@ -318,7 +318,7 @@ while not done:
 
 # update
 
-if(counter>=1200000000000):
+if(counter>=2100000000000):
     size=(394,514)
     screen=pygame.display.set_mode(size)
     finish=pygame.image.load("finish.jpg").convert_alpha()
